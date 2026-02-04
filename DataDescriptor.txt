@@ -1,1 +1,18 @@
-Crime and Incarceration in the U.S.
+Crime and Incarceration in the U.S.
+
+This dataset was obtained from Kaggle and was uploaded by Christopher Correa. It includes yearly counts from U.S. states and some data for the federal count and each row represents a state and the year the data was taken from. The dataset includes variables such as prisoner counts as well as specific categories of the types of crimes committed. Along with this, the dataset also includes the prison population totals.  
+
+According to the description of this dataset, the figures collected are from publications by the Bureau of Justice Statistics and by the FBI Uniform Crime Reporting (UCR) Program.  
+
+The purpose of this data being collected started from the recognition that local government expenditures on prisons have increased about three times as fast as spending on education during this time. The creators of this data set wondered if these efforts led to greater public safety.  
+
+The dataset covers fifteen years of data, spanning from 2001-2016. This allows me to make historical comparisons across time as well as across states. Most variables are float types since they are numerical as they count things such as the crime totals. Year and “prisoner_count “are integers. Jurisdiction, “crime_reporting_change”, and “crimes_estimated” are all strings and are categorical.  
+
+For data cleaning and inspection, I examined the dataset for missing values and variable types. Several variables contained missing values, especially for the “revised_rape “category for the federal jurisdiction. I left these missing values alone to avoid creating artificial data. I also checked variable types to ensure that years, population figures, and crime counts were treated as numeric values while the other variables were treated and logical or categorical values.  
+
+This dataset has several important limitations. First, some jurisdictions do not have complete data for all crime categories, which could restrict some comparisons across states and years.  
+
+Another limitation is that since the FBI collects this information voluntarily from law enforcement agencies, some U.S. municipalities choose not to participate fully. Because of this, the data set includes the variable "crimes_estimated" which includes data that the FBI estimated due to lack of participation from some municipalities. Because of this, it is hard to fully compare some jurisdictions to others because we are unsure of how accurate the estimates are. Along with this, "crime_reporting_change" reflects instances where the reporting standards for jurisdictions changed. This affects analysis because this tells me that some measurement practices varied over time and could potentially affect comparability.  
+
+Lastly, the dataset does not include any demographic or socioeconomic variables that could help explain differences in crime or incarceration rates. As a result, while the dataset is useful for exploratory analysis, conclusions drawn from it should be interpreted with caution. 
+

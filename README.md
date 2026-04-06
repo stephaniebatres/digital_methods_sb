@@ -1,0 +1,27 @@
+# Milestone 1 - Crime and Incarceration in the U.S.
+This dataset was obtained from Kaggle and was uploaded by Christopher Correa. It includes yearly counts from U.S. states and some data for the federal count and each row represents a state and the year the data was taken from. The dataset includes variables such as prisoner counts as well as specific categories of the types of crimes committed. Along with this, the dataset also includes the prison population totals.  
+
+According to the description of this dataset, the figures collected are from publications by the Bureau of Justice Statistics and by the FBI Uniform Crime Reporting (UCR) Program.  
+
+The purpose of this data being collected started from the recognition that local government expenditures on prisons have increased about three times as fast as spending on education during this time. The creators of this data set wondered if these efforts led to greater public safety.  
+
+The dataset covers fifteen years of data, spanning from 2001-2016. This allows me to make historical comparisons across time as well as across states. Most variables are float types since they are numerical as they count things such as the crime totals. Year and “prisoner_count “are integers. Jurisdiction, “crime_reporting_change”, and “crimes_estimated” are all strings and are categorical.  
+
+For data cleaning and inspection, I examined the dataset for missing values and variable types. Several variables contained missing values, especially for the “revised_rape“ category for the federal jurisdiction. The reason this column has the most missing values is because it counts the number of rapes after the definition for rape was revised, which started in the year 2013. I left these missing values alone to avoid creating artificial data. I also checked variable types to ensure that years, population figures, and crime counts were treated as numeric values while the other variables were treated and logical or categorical values.  
+
+This dataset has several important limitations. First, some jurisdictions do not have complete data for all crime categories, which could restrict some comparisons across states and years.  
+
+Another limitation is that since the FBI collects this information voluntarily from law enforcement agencies, some U.S. municipalities choose not to participate fully. Because of this, the data set includes the variable "crimes_estimated" which includes data that the FBI estimated due to lack of participation from some municipalities. Because of this, it is hard to fully compare some jurisdictions to others because we are unsure of how accurate the estimates are. Along with this, "crime_reporting_change" reflects instances where the reporting standards for jurisdictions changed. This affects analysis because this tells me that some measurement practices varied over time and could potentially affect comparability.  
+
+Lastly, the dataset does not include any demographic or socioeconomic variables that could help explain differences in crime or incarceration rates. As a result, while the dataset is useful for exploratory analysis, conclusions drawn from it should be interpreted with caution. 
+
+# Milestone 3 - Minimum Viable Product
+One of the main challenges in this project was structuring the data in a way that allowed for a meaningful comparison between Southern and non-Southern states. I began by loading the dataset and creating a categorical variable that grouped states into “South” and “Non-South” based on a list I created which named all the Southern States. One challenge with even this though was having to decide which states I would consider “South” and I ended up including all states that were a part of the Confederate South just because in my historical assumptions, I did mention Jim Crow laws.  
+
+From here, I used a group by function to calculate the mean prisoner count and mean violent crime total for each region. However, simply comparing the averages did not seem sufficient to me because raw counts do not allow for direct comparison across regions with different population sizes and crime levels. To address this, I created a new “incarceration_rate” by dividing prisoner count by violent crime totals, and this way we can see the proportions based on each region. I then chose to visualize the results with a bar chart. I felt that a bar chart would be best for the audience to visualize the differences between the regions.  
+
+My initial hypothesis was that Southern states would have higher incarceration rates relative to crime, reflecting the legacy of “tough on crime” policies and the long-term effect of post Jim Crow on legal structures.  
+
+The results partially supported this expectation. While both regions showed similar incarceration rates, the South has a slightly higher rate (0.119 compared to 0.118 in non-Southern states). This suggests that when accounting for total crime, Southern states may incarcerate at a marginally higher level relative to overall criminal activity.  
+
+In this exploration, the differences between regions are relatively small, indicating that regional differences may not be as high as I initially expected. As I continue to explore this question though, I think doing more proportions in terms of populations between Southern states and non-Southern states could be useful in measuring the incarceration rate and maybe that could make the differences even greater.  
